@@ -7,7 +7,7 @@ git, docker, docker-compose
 ## Como utitilizar:
 
 ### Faça o download do projeto
-- ``git clone https://github.com/mauriciohaygert/avaliacao_join.git
+- ``git clone https://github.com/mauriciohaygert/avaliacao_join.git``
 ### Entre na pasta do projeto
 - ``cd avaliacao_join``
 ### Subir o servidor de aplicação
