@@ -1,0 +1,42 @@
+<?php
+/**
+ * @var $product Application\Model\Product
+ * @var $products \Zend\Db\ResultSet\ResultSet
+ */
+?>
+<h1>Lista de Produtos</h1>
+<div class="form-group">
+    <a href="<?= $this->url('product', ['action' => 'create']) ?>" class="btn btn-success btn-sm">
+        Adicionar
+    </a>
+    <a href="<?= $this->url('category') ?>" class="btn btn-warning btn-sm">
+        Voltar
+    </a>
+</div>
+<table class="table table-striped">
+    <thead>
+    <th>Código</th>
+    <th>Produto</th>
+    <th>Preço</th>
+    <th></th>
+    </thead>
+    <tbody>
+    <?php foreach ($products as $product): ?>
+        <tr>
+            <td class=""><?= $product->getId() ?></td>
+            <td class=""><?= $product->getName() ?></td>
+            <td class=""><?= $product->getValue() ?></td>
+            <td class="text-right">
+                <a href="<?= $this->url('product', ['action' => 'update', 'id' => $product->getId()]) ?>"
+                   class="btn btn-sm btn-info">
+                    Editar
+                </a>
+                <a href="<?= $this->url('product', ['action' => 'delete', 'id' => $product->getId()]) ?>"
+                   class="btn btn-sm btn-danger">
+                    Deletar
+                </a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

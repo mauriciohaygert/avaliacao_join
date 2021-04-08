@@ -1,0 +1,41 @@
+<?php
+/**
+ * @var $form Zend\Form\Form
+ * @var $this Zend\View\Model\ViewModel
+ */
+
+$title = "Editar Categoria";
+$this->headTitle($title);
+?>
+<H1><?= $this->escapeHtml($title) ?></H1>
+<?php
+$form->setAttribute('action', $this->url('category', ['action' => 'update', 'id' => $id]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+$id = $this->form->get('id');
+$name = $this->form->get('name');
+$name->setAttribute('class', 'form-control');
+$name->setAttribute('autofocus', 'autofocus');
+
+$submit = $this->form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary btn-sm');
+
+?>
+<?= $this->formElement($id) ?>
+<div class="form-group">
+    <div class="col-md-6">
+        <?= $this->formLabel($name) ?>
+        <?= $this->formElement($name) ?>
+        <?= $this->formElementErrors()->render($name, ['class' => 'help-block']) ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+
+        <?= $this->formElement($submit) ?>
+        <a href="<?= $this->url('category', ['action' => 'index']) ?>" class="btn btn-warning btn-sm">
+            Voltar
+        </a>
+    </div>
+</div>
